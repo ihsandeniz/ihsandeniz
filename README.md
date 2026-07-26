@@ -85,9 +85,11 @@
       </p>
     </td>
     <td width="34%" align="center" valign="middle">
-      <img src="./assets/mark.png" width="170" alt="HALKA — the ring HUD mark">
+      <a href="https://ihsandeniz.net.tr">
+        <img src="./assets/logo.png" width="150" alt="İhsan Deniz — İD monogram">
+      </a>
       <br>
-      <sub><b>HALKA</b> · the ring</sub>
+      <sub><b>ihsandeniz.net.tr</b></sub>
     </td>
   </tr>
 </table>
