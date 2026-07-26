@@ -47,24 +47,20 @@
     color:#9fdbe8;background:rgba(34,211,238,.06)}
   .chip.g{border-color:rgba(242,204,96,.32);color:#e8ce88;background:rgba(242,204,96,.06)}
 
-  /* HALKA — concentric ring mark */
-  .mark{width:210px;height:210px;position:relative;flex:none}
-  .ring{position:absolute;inset:0;border-radius:50%;border:1px solid rgba(255,255,255,.07)}
-  .r1{inset:0;border:2px solid transparent;
-      background:conic-gradient(from 200deg,var(--cyan),rgba(34,211,238,.05) 45%,rgba(242,204,96,.05) 62%,var(--gold) 100%) border-box;
-      -webkit-mask:linear-gradient(#000 0 0) padding-box,linear-gradient(#000 0 0);
-      -webkit-mask-composite:xor;mask-composite:exclude;}
-  .r2{inset:26px;border:1px solid rgba(34,211,238,.35)}
-  .r3{inset:52px;border:1px dashed rgba(242,204,96,.30)}
-  .core{position:absolute;inset:74px;border-radius:50%;
-    background:radial-gradient(circle at 38% 34%,rgba(34,211,238,.55),rgba(34,211,238,.06) 70%);
-    border:1px solid rgba(34,211,238,.45);
-    display:flex;align-items:center;justify-content:center}
-  .core span{font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:.2em;color:#cdeef6}
-  .tick{position:absolute;width:6px;height:6px;border-radius:50%;background:var(--gold);
-    box-shadow:0 0 12px rgba(242,204,96,.9)}
-  .t1{top:8px;left:50%;transform:translateX(-50%)}
-  .t2{bottom:26px;right:24px}
+
+  .term{width:390px;flex:none;border:1px solid rgba(34,211,238,.22);border-radius:10px;
+    background:linear-gradient(180deg,rgba(13,20,28,.95),rgba(7,9,13,.95));
+    box-shadow:0 24px 60px -20px rgba(0,0,0,.9),0 0 0 1px rgba(255,255,255,.02);overflow:hidden}
+  .tbar{display:flex;align-items:center;gap:7px;padding:9px 12px;border-bottom:1px solid rgba(255,255,255,.06);
+    background:rgba(255,255,255,.02)}
+  .tdot{width:9px;height:9px;border-radius:50%;background:#2b3440}
+  .tdot.c{background:rgba(34,211,238,.75)} .tdot.g{background:rgba(242,204,96,.75)}
+  .tname{margin-left:6px;font-family:"JetBrains Mono",monospace;font-size:11px;color:#6f7d8c;letter-spacing:.06em}
+  .tbody{padding:14px 16px 16px;font-family:"JetBrains Mono",monospace;font-size:13px;line-height:1.85}
+  .tbody .p{color:var(--cyan)} .tbody .c{color:#dbe6f0}
+  .tbody .o{color:#7d8a99} .tbody .ok{color:var(--gold)}
+  .cur{display:inline-block;width:8px;height:15px;background:var(--cyan);vertical-align:-2px;
+    box-shadow:0 0 10px rgba(34,211,238,.8)}
 </style>
 <div class="glow-c"></div><div class="glow-g"></div><div class="grid"></div><div class="rule"></div>
 <div class="wrap">
@@ -79,11 +75,16 @@
       <span class="chip g">OPEN SOURCE</span>
     </div>
   </div>
-  <div class="mark">
-    <div class="ring r1"></div>
-    <div class="ring r2"></div>
-    <div class="ring r3"></div>
-    <div class="core"><span>HALKA</span></div>
-    <div class="tick t1"></div><div class="tick t2"></div>
+
+  <div class="term">
+    <div class="tbar"><span class="tdot c"></span><span class="tdot g"></span><span class="tdot"></span>
+      <span class="tname">~/yuki</span></div>
+    <div class="tbody">
+      <div><span class="p">$</span> <span class="c">./run.sh</span></div>
+      <div class="o">→ model&nbsp;&nbsp;&nbsp; <span class="c">your key</span></div>
+      <div class="o">→ memory&nbsp;&nbsp; <span class="c">your disk</span></div>
+      <div class="o">→ telemetry <span class="ok">none</span></div>
+      <div><span class="p">$</span> <span class="cur"></span></div>
+    </div>
   </div>
 </div>
