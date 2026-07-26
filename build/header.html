@@ -1,0 +1,89 @@
+<!doctype html>
+<meta charset="utf-8">
+<style>
+  :root{
+    --bg:#07090d; --ink:#e8eef5; --dim:#8b98a8;
+    --cyan:#22d3ee; --gold:#f2cc60;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html,body{width:1200px;height:300px;overflow:hidden}
+  body{
+    background:var(--bg);
+    font-family:"Adwaita Sans","DejaVu Sans",sans-serif;
+    color:var(--ink);
+    position:relative;
+  }
+  /* ambient light */
+  .glow-c{position:absolute;width:760px;height:760px;left:-260px;top:-420px;
+    background:radial-gradient(circle,rgba(34,211,238,.20),transparent 62%);}
+  .glow-g{position:absolute;width:680px;height:680px;right:-180px;bottom:-420px;
+    background:radial-gradient(circle,rgba(242,204,96,.14),transparent 62%);}
+  /* dot grid */
+  .grid{position:absolute;inset:0;
+    background-image:radial-gradient(rgba(255,255,255,.055) 1px,transparent 1px);
+    background-size:22px 22px;
+    -webkit-mask-image:linear-gradient(100deg,#000 10%,transparent 78%);}
+  /* top hairline */
+  .rule{position:absolute;left:0;right:0;top:0;height:2px;
+    background:linear-gradient(90deg,var(--cyan) 0%,var(--cyan) 22%,var(--gold) 62%,rgba(242,204,96,0) 100%);}
+
+  .wrap{position:relative;height:100%;display:flex;align-items:center;
+    padding:0 64px;gap:40px}
+  .left{flex:1;min-width:0}
+
+  .kicker{font-family:"JetBrains Mono",monospace;font-size:12px;letter-spacing:.24em;
+    text-transform:uppercase;color:var(--gold);margin-bottom:16px;display:flex;align-items:center;gap:12px}
+  .kicker::before{content:"";width:26px;height:1px;background:var(--gold);opacity:.8}
+
+  h1{font-size:64px;line-height:1;font-weight:700;letter-spacing:-.025em;
+     background:linear-gradient(92deg,#ffffff 30%,#bfe9f4 70%,var(--cyan) 100%);
+     -webkit-background-clip:text;background-clip:text;color:transparent;}
+  .sub{margin-top:16px;font-size:19px;line-height:1.45;color:var(--dim);max-width:520px}
+  .sub b{color:var(--ink);font-weight:600}
+
+  .chips{margin-top:22px;display:flex;gap:8px;flex-wrap:wrap}
+  .chip{font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:.12em;
+    padding:6px 11px;border:1px solid rgba(34,211,238,.30);border-radius:4px;
+    color:#9fdbe8;background:rgba(34,211,238,.06)}
+  .chip.g{border-color:rgba(242,204,96,.32);color:#e8ce88;background:rgba(242,204,96,.06)}
+
+  /* HALKA — concentric ring mark */
+  .mark{width:210px;height:210px;position:relative;flex:none}
+  .ring{position:absolute;inset:0;border-radius:50%;border:1px solid rgba(255,255,255,.07)}
+  .r1{inset:0;border:2px solid transparent;
+      background:conic-gradient(from 200deg,var(--cyan),rgba(34,211,238,.05) 45%,rgba(242,204,96,.05) 62%,var(--gold) 100%) border-box;
+      -webkit-mask:linear-gradient(#000 0 0) padding-box,linear-gradient(#000 0 0);
+      -webkit-mask-composite:xor;mask-composite:exclude;}
+  .r2{inset:26px;border:1px solid rgba(34,211,238,.35)}
+  .r3{inset:52px;border:1px dashed rgba(242,204,96,.30)}
+  .core{position:absolute;inset:74px;border-radius:50%;
+    background:radial-gradient(circle at 38% 34%,rgba(34,211,238,.55),rgba(34,211,238,.06) 70%);
+    border:1px solid rgba(34,211,238,.45);
+    display:flex;align-items:center;justify-content:center}
+  .core span{font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:.2em;color:#cdeef6}
+  .tick{position:absolute;width:6px;height:6px;border-radius:50%;background:var(--gold);
+    box-shadow:0 0 12px rgba(242,204,96,.9)}
+  .t1{top:8px;left:50%;transform:translateX(-50%)}
+  .t2{bottom:26px;right:24px}
+</style>
+<div class="glow-c"></div><div class="glow-g"></div><div class="grid"></div><div class="rule"></div>
+<div class="wrap">
+  <div class="left">
+    <div class="kicker">SOLO BUILDER &nbsp;·&nbsp; TÜRKİYE</div>
+    <h1>İhsan Deniz</h1>
+    <div class="sub">Local-first AI tools. They run on <b>your</b> machine, with <b>your</b> key — no account, nothing routed through me.</div>
+    <div class="chips">
+      <span class="chip">LOCAL-FIRST</span>
+      <span class="chip">BYOK</span>
+      <span class="chip g">SELF-HOSTED</span>
+      <span class="chip g">OPEN SOURCE</span>
+    </div>
+  </div>
+  <div class="mark">
+    <div class="ring r1"></div>
+    <div class="ring r2"></div>
+    <div class="ring r3"></div>
+    <div class="core"><span>HALKA</span></div>
+    <div class="tick t1"></div><div class="tick t2"></div>
+  </div>
+</div>

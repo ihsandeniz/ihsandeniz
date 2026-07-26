@@ -1,0 +1,26 @@
+<!doctype html>
+<meta charset="utf-8">
+<style>
+  :root{--bg:#07090d;--ink:#e8eef5;--dim:#8b98a8;--cyan:#22d3ee;--gold:#f2cc60}
+  *{margin:0;padding:0;box-sizing:border-box}
+  html,body{width:1200px;height:150px;overflow:hidden}
+  body{background:var(--bg);font-family:"Adwaita Sans","DejaVu Sans",sans-serif;color:var(--ink);position:relative}
+  .glow{position:absolute;width:900px;height:520px;left:50%;transform:translateX(-50%);bottom:-360px;
+    background:radial-gradient(ellipse,rgba(34,211,238,.16),transparent 65%)}
+  .grid{position:absolute;inset:0;
+    background-image:radial-gradient(rgba(255,255,255,.05) 1px,transparent 1px);background-size:22px 22px;
+    -webkit-mask-image:radial-gradient(ellipse at 50% 120%,#000 10%,transparent 70%)}
+  .rule{position:absolute;left:0;right:0;bottom:0;height:2px;
+    background:linear-gradient(90deg,rgba(34,211,238,0),var(--cyan) 30%,var(--gold) 72%,rgba(242,204,96,0))}
+  .wrap{position:relative;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px}
+  .line{font-size:24px;font-weight:600;letter-spacing:-.01em}
+  .line em{font-style:normal;color:var(--gold)}
+  .meta{font-family:"JetBrains Mono",monospace;font-size:12px;letter-spacing:.18em;color:var(--dim);
+    display:flex;align-items:center;gap:16px}
+  .dot{width:5px;height:5px;border-radius:50%;background:var(--cyan);box-shadow:0 0 10px rgba(34,211,238,.9)}
+</style>
+<div class="glow"></div><div class="grid"></div><div class="rule"></div>
+<div class="wrap">
+  <div class="line">No telemetry. No account. <em>It runs on hardware you own.</em></div>
+  <div class="meta"><span class="dot"></span> BUILT IN PUBLIC <span>·</span> ONE PERSON <span>·</span> SHIPPED, NOT ANNOUNCED</div>
+</div>

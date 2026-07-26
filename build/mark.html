@@ -1,0 +1,33 @@
+<!doctype html>
+<meta charset="utf-8">
+<style>
+  :root{--bg:#07090d;--cyan:#22d3ee;--gold:#f2cc60}
+  *{margin:0;padding:0;box-sizing:border-box}
+  html,body{width:400px;height:400px;overflow:hidden}
+  body{background:var(--bg);font-family:"JetBrains Mono",monospace;position:relative;
+    display:flex;align-items:center;justify-content:center}
+  .glow{position:absolute;width:420px;height:420px;
+    background:radial-gradient(circle,rgba(34,211,238,.15),transparent 62%)}
+  .mark{width:300px;height:300px;position:relative}
+  .ring{position:absolute;border-radius:50%}
+  .r1{inset:0;border:2px solid transparent;
+      background:conic-gradient(from 200deg,var(--cyan),rgba(34,211,238,.05) 45%,rgba(242,204,96,.05) 62%,var(--gold) 100%) border-box;
+      -webkit-mask:linear-gradient(#000 0 0) padding-box,linear-gradient(#000 0 0);
+      -webkit-mask-composite:xor;mask-composite:exclude}
+  .r2{inset:38px;border:1px solid rgba(34,211,238,.35)}
+  .r3{inset:74px;border:1px dashed rgba(242,204,96,.30)}
+  .core{position:absolute;inset:106px;border-radius:50%;
+    background:radial-gradient(circle at 38% 34%,rgba(34,211,238,.55),rgba(34,211,238,.06) 70%);
+    border:1px solid rgba(34,211,238,.45);display:flex;align-items:center;justify-content:center}
+  .core span{font-size:14px;letter-spacing:.22em;color:#cdeef6}
+  .tick{position:absolute;width:8px;height:8px;border-radius:50%;background:var(--gold);
+    box-shadow:0 0 14px rgba(242,204,96,.9)}
+  .t1{top:11px;left:50%;transform:translateX(-50%)}
+  .t2{bottom:38px;right:34px}
+</style>
+<div class="glow"></div>
+<div class="mark">
+  <div class="ring r1"></div><div class="ring r2"></div><div class="ring r3"></div>
+  <div class="core"><span>HALKA</span></div>
+  <div class="tick t1"></div><div class="tick t2"></div>
+</div>
