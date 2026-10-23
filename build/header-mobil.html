@@ -1,0 +1,105 @@
+<!doctype html>
+<meta charset="utf-8">
+<style>
+  :root{
+    --bg:#07090d; --ink:#e8eef5; --dim:#8b98a8;
+    --cyan:#22d3ee; --gold:#f2cc60;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html,body{width:1200px;height:300px;overflow:hidden}
+  body{
+    background:var(--bg);
+    font-family:"Adwaita Sans","DejaVu Sans",sans-serif;
+    color:var(--ink);
+    position:relative;
+  }
+  /* ambient light */
+  .glow-c{position:absolute;width:760px;height:760px;left:-260px;top:-420px;
+    background:radial-gradient(circle,rgba(34,211,238,.20),transparent 62%);}
+  .glow-g{position:absolute;width:680px;height:680px;right:-180px;bottom:-420px;
+    background:radial-gradient(circle,rgba(242,204,96,.14),transparent 62%);}
+  /* dot grid */
+  .grid{position:absolute;inset:0;
+    background-image:radial-gradient(rgba(255,255,255,.055) 1px,transparent 1px);
+    background-size:22px 22px;
+    -webkit-mask-image:linear-gradient(100deg,#000 10%,transparent 78%);}
+  /* top hairline */
+  .rule{position:absolute;left:0;right:0;top:0;height:2px;
+    background:linear-gradient(90deg,var(--cyan) 0%,var(--cyan) 22%,var(--gold) 62%,rgba(242,204,96,0) 100%);}
+
+  .wrap{position:relative;height:100%;display:flex;align-items:center;
+    padding:0 64px;gap:40px}
+  .left{flex:1;min-width:0}
+
+  .kicker{font-family:"JetBrains Mono",monospace;font-size:12px;letter-spacing:.24em;
+    text-transform:uppercase;color:var(--gold);margin-bottom:16px;display:flex;align-items:center;gap:12px}
+  .kicker::before{content:"";width:26px;height:1px;background:var(--gold);opacity:.8}
+
+  h1{font-size:64px;line-height:1;font-weight:700;letter-spacing:-.025em;
+     background:linear-gradient(92deg,#ffffff 30%,#bfe9f4 70%,var(--cyan) 100%);
+     -webkit-background-clip:text;background-clip:text;color:transparent;}
+  .sub{margin-top:16px;font-size:19px;line-height:1.45;color:var(--dim);max-width:520px}
+  .sub b{color:var(--ink);font-weight:600}
+
+  .chips{margin-top:22px;display:flex;gap:8px;flex-wrap:wrap}
+  .chip{font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:.12em;
+    padding:6px 11px;border:1px solid rgba(34,211,238,.30);border-radius:4px;
+    color:#9fdbe8;background:rgba(34,211,238,.06)}
+  .chip.g{border-color:rgba(242,204,96,.32);color:#e8ce88;background:rgba(242,204,96,.06)}
+
+
+  .term{width:390px;flex:none;border:1px solid rgba(34,211,238,.22);border-radius:10px;
+    background:linear-gradient(180deg,rgba(13,20,28,.95),rgba(7,9,13,.95));
+    box-shadow:0 24px 60px -20px rgba(0,0,0,.9),0 0 0 1px rgba(255,255,255,.02);overflow:hidden}
+  .tbar{display:flex;align-items:center;gap:7px;padding:9px 12px;border-bottom:1px solid rgba(255,255,255,.06);
+    background:rgba(255,255,255,.02)}
+  .tdot{width:9px;height:9px;border-radius:50%;background:#2b3440}
+  .tdot.c{background:rgba(34,211,238,.75)} .tdot.g{background:rgba(242,204,96,.75)}
+  .tname{margin-left:6px;font-family:"JetBrains Mono",monospace;font-size:11px;color:#6f7d8c;letter-spacing:.06em}
+  .tbody{padding:14px 16px 16px;font-family:"JetBrains Mono",monospace;font-size:13px;line-height:1.85}
+  .tbody .p{color:var(--cyan)} .tbody .c{color:#dbe6f0}
+  .tbody .o{color:#7d8a99} .tbody .ok{color:var(--gold)}
+  .cur{display:inline-block;width:8px;height:15px;background:var(--cyan);vertical-align:-2px;
+    box-shadow:0 0 10px rgba(34,211,238,.8)}
+
+  /* ── dar ekran sürümü: 600×500, GitHub mobilde ~308 px'e iner → yazılar ~2 kat büyük ── */
+  html,body{width:600px;height:500px}
+  .glow-c{left:-360px;top:-380px} .glow-g{right:-320px;bottom:-360px}
+  .wrap{flex-direction:column;align-items:stretch;justify-content:center;padding:0 40px;gap:30px}
+  .kicker{font-size:19px;margin-bottom:18px}
+  h1{font-size:76px}
+  .sub{font-size:29px;max-width:none;margin-top:18px}
+  .chips{margin-top:22px;gap:10px}
+  .chip{font-size:18px;padding:8px 13px}
+  .left{flex:none} .term{display:none}  /* terminal süs; dar ekranda yer kaplamasın */
+  .tname{font-size:17px}
+  .tbody{font-size:22px;line-height:1.7;padding:14px 20px 18px}
+  .tdot{width:13px;height:13px}
+  .cur{width:12px;height:22px}
+</style>
+<div class="glow-c"></div><div class="glow-g"></div><div class="grid"></div><div class="rule"></div>
+<div class="wrap">
+  <div class="left">
+    <div class="kicker">SOLO BUILDER &nbsp;·&nbsp; TÜRKİYE</div>
+    <h1>İhsan Deniz</h1>
+    <div class="sub">Local-first AI tools. They run on <b>your</b> machine, with <b>your</b> key — no account, nothing routed through me.</div>
+    <div class="chips">
+      <span class="chip">LOCAL-FIRST</span>
+      <span class="chip">BYOK</span>
+      <span class="chip g">SELF-HOSTED</span>
+      <span class="chip g">OPEN SOURCE</span>
+    </div>
+  </div>
+
+  <div class="term">
+    <div class="tbar"><span class="tdot c"></span><span class="tdot g"></span><span class="tdot"></span>
+      <span class="tname">~/yuki</span></div>
+    <div class="tbody">
+      <div><span class="p">$</span> <span class="c">./run.sh</span></div>
+      <div class="o">→ model&nbsp;&nbsp;&nbsp; <span class="c">your key</span></div>
+      <div class="o">→ memory&nbsp;&nbsp; <span class="c">your disk</span></div>
+      <div class="o">→ telemetry <span class="ok">none</span></div>
+      <div><span class="p">$</span> <span class="cur"></span></div>
+    </div>
+  </div>
+</div>

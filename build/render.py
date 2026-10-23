@@ -3,7 +3,8 @@ import pathlib
 base = pathlib.Path(__file__).parent
 out  = base.parent / "assets"
 out.mkdir(exist_ok=True)
-jobs = [("header.html","header.png",1200,300),("footer.html","footer.png",1200,150)]
+jobs = [("header.html","header.png",1200,300),("footer.html","footer.png",1200,150),
+        ("header-mobil.html","header-mobile.png",600,500)]
 with sync_playwright() as p:
     b = p.chromium.launch()
     for src,dst,w,h in jobs:

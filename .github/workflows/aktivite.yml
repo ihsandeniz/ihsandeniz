@@ -1,0 +1,24 @@
+# Profil README'deki katkı grafiğini (assets/activity*.svg) günde bir kez yeniden üretir.
+# Dış grafik servisi yok: veri GitHub'ın kendi GraphQL API'sinden, çizim build/aktivite.py'de.
+# Değişiklik varsa depoya tek commit atar; yoksa hiçbir şey yapmaz.
+name: aktivite-grafigi
+on:
+  schedule:
+    - cron: "17 3 * * *"   # her gün 03:17 UTC
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  ciz:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 build/aktivite.py
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - run: |
+          git diff --quiet assets/ && exit 0
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "aktivite: grafik güncellendi" assets/activity.svg assets/activity-mobile.svg
+          git push

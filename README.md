@@ -1,14 +1,16 @@
 <p align="center">
-  <img src="./assets/header.png" width="100%" alt="İhsan Deniz — local-first AI tools">
+  <picture>
+    <source media="(max-width: 600px)" srcset="./assets/header-mobile.png">
+    <img src="./assets/header.png" width="100%" alt="İhsan Deniz — local-first AI tools">
+  </picture>
 </p>
 
 <p align="center">
   <a href="https://github.com/ihsandeniz">
-    <img
-      src="https://github-readme-activity-graph.vercel.app/graph?username=ihsandeniz&amp;bg_color=00000000&amp;color=8b98a8&amp;title_color=8b98a8&amp;line=22d3ee&amp;point=f2cc60&amp;area_color=22d3ee&amp;area=true&amp;hide_border=true&amp;grid=false&amp;height=300&amp;days=31&amp;custom_title=Contribution%20activity%20%C2%B7%20last%2031%20days"
-      width="100%"
-      alt="İhsan Deniz contribution activity over the last 31 days"
-    >
+    <picture>
+      <source media="(max-width: 600px)" srcset="./assets/activity-mobile.svg">
+      <img src="./assets/activity.svg" width="100%" alt="İhsan Deniz contribution activity over the last 31 days">
+    </picture>
   </a>
 </p>
 
@@ -130,5 +132,5 @@
 </p>
 
 <p align="center">
-  <sub>Header art generated from <a href="./build">./build</a> — plain HTML, rendered locally. No external services.</sub>
+  <sub>Header art generated from <a href="./build">./build</a> — plain HTML, rendered locally. The activity graph is redrawn daily by a GitHub Action from GitHub's own API. No external services.</sub>
 </p>
