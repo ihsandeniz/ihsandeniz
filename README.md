@@ -53,7 +53,7 @@
       <p>
         <a href="https://ihsandeniz.net.tr/proje.html?p=alice"><b>project page</b></a>
         &nbsp;&nbsp;·&nbsp;&nbsp;
-        <a href="https://github.com/ihsandeniz/yuki-ai/releases/latest"><b>download Yuki Lite</b></a>
+        <a href="https://ihsandeniz.net.tr/yuki.html"><b>about Yuki</b></a>
       </p>
     </td>
   </tr>
@@ -105,7 +105,6 @@
 | --- | --- |
 | **[usage&#8209;tracker](https://github.com/ihsandeniz/usage-tracker)** <br> <sub>Python · MIT · v0.6.0</sub> | A *Pane for Linux*: all your AI usage, rate limits and real dollar spend in one place — a waybar badge, a floating widget, or a web panel. Guided setup that shows you every line before it writes it, and undoes it from the same screen. stdlib Python + Vanilla JS, zero dependencies, loopback-only. |
 | **[ajan&#8209;bekci](https://github.com/ihsandeniz/ajan-bekci)** <br> <sub>Rust · Apache-2.0 · v0.1.0</sub> | A warden for terminal coding agents. Wrap Claude Code or Codex CLI with it, and when the agent exits — normally, because the terminal closed, or because it crashed — it sweeps the processes the agent left behind. On the measured test rig: 0 leaks in 30 wrapped runs across those three exit paths; the unwrapped agents leaked in 30 of 30. `tara` lists leftovers from dead agents, with an evidence level. Linux + Windows. |
-| **[yuki&#8209;ai](https://github.com/ihsandeniz/yuki-ai)** | Release channel for the free Yuki Lite build — a single AppImage, nothing to install. |
 
 <br>
 
